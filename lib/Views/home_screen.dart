@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:intl/intl.dart';
 import 'package:news_app/Models/NewsChannelHeadLinesModel.dart';
 import 'package:news_app/Utils/api_urls.dart';
 import 'package:news_app/Utils/constants/my_spinkit.dart';
@@ -33,6 +34,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     final height = MediaQuery.of(context).size.height *1;
     final width = MediaQuery.of(context).size.width *1;
+    final format = DateFormat('MMMM dd, yyyy');
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -108,6 +110,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       scrollDirection: Axis.horizontal,
                       itemCount: snapshot.data!.articles!.length,
                         itemBuilder: (context, index) {
+                        DateTime dateTime = DateTime.parse(snapshot.data!.articles![index].publishedAt.toString());
                           return Padding(
                             padding: const EdgeInsets.all(15.0),
                             child: Stack(
@@ -163,7 +166,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   style: GoogleFonts.poppins(fontSize: 15,fontWeight: FontWeight.w700),
                                                 ),
                                                 Text(
-                                                  "${DateTime.now().hour}:${DateTime.now().minute}",
+                                                  // "${DateTime.now().hour}:${DateTime.now().minute}",
+                                                  format.format(dateTime),
                                                   maxLines: 2,
                                                   overflow: TextOverflow.ellipsis,
                                                   style: GoogleFonts.poppins(fontSize: 15,fontWeight: FontWeight.w600),
@@ -263,6 +267,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                               ),
                                               Text(
                                                 "${DateTime.now().hour}:${DateTime.now().minute}",
+
+                                                // snapshot.data!.articles![index].publishedAt.toString(),
                                                 maxLines: 1,
                                                 overflow: TextOverflow.ellipsis,
                                                 style: GoogleFonts.poppins(fontSize:12,fontWeight: FontWeight.w600),
