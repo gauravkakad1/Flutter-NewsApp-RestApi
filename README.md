@@ -6,7 +6,7 @@ News App using Flutter.
 
 This project is a starting point for a Flutter application.
 
-- [News App Live on Web ](https://news-app-a9118.web.app/)
+- [ CLICK HERE : News App Live on Web ](https://news-app-a9118.web.app/)
 
 A few resources to get you started if this is your first Flutter project:
 
