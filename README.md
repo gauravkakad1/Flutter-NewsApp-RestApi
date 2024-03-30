@@ -7,7 +7,8 @@ News App using Flutter.
 This project is a starting point for a Flutter application.
 
 - [ CLICK HERE : News App Live on Web ](https://news-app-a9118.web.app/)
-- [dowload Android app link ] (https://drive.google.com/file/d/13ZdxgKmr5mwfMQY9iicYoqatM7-HtT5u/view?usp=sharing)
+- [ dowload Android app link  ](https://drive.google.com/file/d/13ZdxgKmr5mwfMQY9iicYoqatM7-HtT5u/view?usp=sharing)
+
 
 A few resources to get you started if this is your first Flutter project:
 
